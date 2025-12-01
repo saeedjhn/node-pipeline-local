@@ -1,0 +1,9 @@
+{
+  "platform": "node",
+  "app":"node-pipeline",
+  "port":3000,
+  "build":{
+    "location":"iran"
+  },
+  "disks":[]
+}
