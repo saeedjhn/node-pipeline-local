@@ -1,0 +1,12 @@
+services:
+  app-prod:
+    container_name: node-pipeline-local-prod
+    build:
+      context: ../..
+      dockerfile: deploy/prod/Dockerfile
+#    env_file:
+#      -
+    ports:
+      - 3000:3000
+    profiles:
+      - prod

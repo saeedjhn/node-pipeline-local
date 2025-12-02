@@ -16,9 +16,6 @@ RUN #npm audit fix --force
 # Bundle app source
 COPY . .
 
-# Creates a "dist" folder with the production build
-#RUN #npm run build
-
 # Expose the port on which the app will run
 EXPOSE 3000
 
