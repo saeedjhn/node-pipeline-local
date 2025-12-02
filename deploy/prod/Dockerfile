@@ -25,9 +25,6 @@ COPY package*.json ./
 
 RUN npm ci --production
 
-## To address all issues (including breaking changes)
-RUN #npm audit fix --force
-
 FROM node:22-alpine3.22 as production
 
 WORKDIR $DIR
