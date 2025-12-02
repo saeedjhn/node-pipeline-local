@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.2.0] - 2025-12-01
+### Added
+- dockerize for production
+
+---
+
 ## [1.4.0] - 2025-12-01
 ### Added
 - ✨ Added **Advanced Teacher Search & Filter** feature enabling students to find the best teachers based on:
