@@ -17,6 +17,8 @@ RUN npm run build
 
 FROM node:22.21.1 as builder
 
+ENV DIR=/app
+
 WORKDIR $DIR
 
 ARG NODE_ENV=production
@@ -26,6 +28,8 @@ COPY package*.json ./
 RUN npm ci --production
 
 FROM node:22-alpine3.22 as production
+
+ENV DIR=/app
 
 WORKDIR $DIR
 

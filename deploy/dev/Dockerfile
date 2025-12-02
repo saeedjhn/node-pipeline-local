@@ -10,9 +10,6 @@ COPY package*.json ./
 # Install app dependencies
 RUN npm install
 
-# To address all issues (including breaking changes)
-RUN #npm audit fix --force
-
 # Bundle app source
 COPY . .
 
