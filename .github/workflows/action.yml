@@ -63,7 +63,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         uses: docker/build-push-action@v3
         with:
-          file: deployments/production/Dockerfile
+          file: deploy/prod/Dockerfile
           context: .
           push: true
           tags: |
