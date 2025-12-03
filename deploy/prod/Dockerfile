@@ -1,7 +1,7 @@
 ###############################################
 # Development Stage
 ###############################################
-FROM node:22.21.1 AS development
+FROM node:24.11.1 AS development
 
 # Set working directory and environment variables for dev
 ENV DIR=/app \
@@ -25,7 +25,7 @@ RUN npm run build
 ###############################################
 # Builder Stage (Production dependencies only)
 ###############################################
-FROM node:22.21.1 AS builder
+FROM node:24.11.1 AS builder
 
 # Set working directory and environment variables for prod build
 ENV DIR=/app \
@@ -45,7 +45,7 @@ RUN npm ci --production
 ###############################################
 # Production Stage
 ###############################################
-FROM node:22-alpine3.22 AS production
+FROM node:24-alpine3.21 AS production
 
 # Set working directory and environment variables for prod runtime
 ENV DIR=/app \
