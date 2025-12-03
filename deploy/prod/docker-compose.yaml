@@ -7,6 +7,6 @@ services:
 #    env_file:
 #      -
     ports:
-      - 3000:3000
+      - "3000:3000"
     profiles:
       - prod

@@ -1,20 +1,25 @@
-# Base image
-FROM node:22-alpine3.22
+# Base dev image
+FROM node:22-alpine3.22 AS development
 
-# Create app directory
-WORKDIR /app
+# Environment variables for dev
+ENV DIR=/app \
+    NODE_ENV=development \
+    DEBUG=*
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# Set working directory
+WORKDIR $DIR
+
+# Copy package files for dependency install
 COPY package*.json ./
 
-# Install app dependencies
-RUN npm install
+# Install dependencies (including devDependencies)
+RUN npm ci
 
-# Bundle app source
+# Copy project source
 COPY . .
 
-# Expose the port on which the app will run
+# Expose application port
 EXPOSE 3000
 
-# Start the server using the production build
-CMD [ "npm", "run", "start:dev" ]
+# Run application in dev mode
+CMD ["npm", "run", "start:dev"]
