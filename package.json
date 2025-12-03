@@ -1,6 +1,6 @@
 {
-  "name": "node-pipeline-local",
-  "version": "0.1.0",
+  "name": "node-pipeline",
+  "version": "0.3.1",
   "description": "",
   "author": "",
   "private": true,
