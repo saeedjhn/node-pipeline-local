@@ -1,20 +1,16 @@
 services:
   ####################### APPLICATION #######################
-  app-dev:
+  node-pipeline-local-dev:
     container_name: node-pipeline-local-dev
     build:
       context: ../..
       dockerfile: deploy/dev/Dockerfile
-      #    environment:
-      # - PORT=${APP_PORT}
-#    env_file: .env
+#    env_file:
+#      - .env
     ports:
       - "3000:3000"
       - "9229:9229"
-#      - "${APP_PORT}:${APP_PORT}"
     volumes:
-#      - ./:/app
       - ../../:/app
-      - /app/node_modules
     profiles:
       - dev

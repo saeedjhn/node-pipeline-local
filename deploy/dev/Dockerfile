@@ -12,6 +12,8 @@ WORKDIR $DIR
 # Copy package files for dependency install
 COPY package*.json ./
 
+COPY deploy/dev/.env .env
+
 # Install dependencies (including devDependencies)
 RUN npm ci
 
